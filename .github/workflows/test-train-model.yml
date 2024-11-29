@@ -14,6 +14,8 @@ jobs:
     name: Training and Testing
     runs-on: ubuntu-latest
     # needs: [lint-testing, type-testing]
+    env: # Or as an environment variable
+      RASA_PRO_LICENSE: ${{ secrets.RASA_PRO_LICENSE }}
     steps:
       - uses: actions/checkout@v1
       - id: files
@@ -23,8 +25,6 @@ jobs:
             contains(  steps.files.outputs.all, 'data/' )
             || contains(  steps.files.outputs.all, 'config.yml' )
         run: echo "RUN_TRAINING=true" >> $GITHUB_ENV
-      - name: Echo TEST_ENV
-        run: echo TEST_ENV=$TEST_ENV
       - name: Echo RASA_PRO_LICENSE
         run: echo RASA_PRO_LICENSE=$RASA_PRO_LICENSE
       - name: Rasa Train and Test GitHub Action
