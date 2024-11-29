@@ -23,6 +23,10 @@ jobs:
             contains(  steps.files.outputs.all, 'data/' )
             || contains(  steps.files.outputs.all, 'config.yml' )
         run: echo "RUN_TRAINING=true" >> $GITHUB_ENV
+      - name: Echo TEST_ENV
+        run: echo TEST_ENV=$TEST_ENV
+      - name: Echo RASA_PRO_LICENSE
+        run: echo RASA_PRO_LICENSE=$RASA_PRO_LICENSE
       - name: Rasa Train and Test GitHub Action
         # if: env.RUN_TRAINING == 'true'
         uses: RasaHQ/rasa-train-test-gha@main
