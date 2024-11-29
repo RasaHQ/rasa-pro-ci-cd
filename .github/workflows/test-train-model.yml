@@ -35,7 +35,8 @@ jobs:
           cross_validation: false
           publish_summary: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # rasa_pro_license: ${{ secrets.RASA_PRO_LICENSE }}
+          rasa_pro_license: ${{ secrets.RASA_PRO_LICENSE }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
       - name: Upload model
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@main
