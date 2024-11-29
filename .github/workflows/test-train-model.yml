@@ -46,7 +46,7 @@ jobs:
   training-testing:
     name: Training and Testing
     runs-on: ubuntu-latest
-    needs: [lint-testing, type-testing]
+    # needs: [lint-testing, type-testing]
     steps:
       - uses: actions/checkout@v1
       - id: files
