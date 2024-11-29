@@ -28,6 +28,7 @@ jobs:
         uses: RasaHQ/rasa-train-test-gha@rasa-pro-license
         with:
           rasa_image: 'rasa/rasa-pro:3.10.12'
+          train_args: '-data data --domain domain'
           # rasa_version: '3.10.12' 
           test_type: nlu
           data_validate: false

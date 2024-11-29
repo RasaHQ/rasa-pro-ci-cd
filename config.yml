@@ -10,3 +10,4 @@ pipeline:
 policies:
 - name: FlowPolicy
 - name: IntentlessPolicy
+assistant_id: 20241128-224257-online-base
