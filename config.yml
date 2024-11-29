@@ -2,6 +2,8 @@ recipe: default.v1
 language: en
 pipeline:
 - name: SingleStepLLMCommandGenerator
+  flow_retrieval:
+    active: false
   llm:
     model_name: gpt-4
     request_timeout: 7
@@ -9,5 +11,9 @@ pipeline:
 
 policies:
 - name: FlowPolicy
-- name: IntentlessPolicy
+# - name: IntentlessPolicy
+#   llm:
+#     model_name: gpt-4
+#   embeddings:
+#     model_name: gpt-4
 assistant_id: 20241128-224257-online-base
