@@ -1,0 +1,28 @@
+# Standard Ignores
+venv
+__pycache__/
+.DS_Store
+.vscode/
+.history/
+.pytype/
+.venv/
+.pytest_cache/
+
+# Rasa Ignores
+credentials.yml
+*.db-*
+rasa.db*
+*.db
+results/
+models/
+chatroom/
+.idea/
+.rasa/
+.cache/
+.local/
+.keras/
+.global/
+*.zip
+
+.env
+.python-version

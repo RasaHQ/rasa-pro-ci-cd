@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build an action server
+              uses: RasaHQ/rasa-action-server-gha@main
+              with:
+                # actions_directory: actions
+                # requirements_file: actions/requirements.txt
+                docker_image_name: 'stephens/action-server-example'
+                # More details on how to use GitHub secrets:
+                # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+                docker_registry_login: stephens
+                docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+                # More details about github context:
+                # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
+                docker_image_tag: ${{ github.sha }}
