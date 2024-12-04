@@ -48,7 +48,7 @@ jobs:
       DOCKERHUB_USERNAME: stephens
     steps:
       - name: Checkout git repository 🕝
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Build Actions Server Image
         uses: RasaHQ/rasa-action-server-gha@main
         with:

@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     # needs: [lint-testing, type-testing]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - id: files
         uses: jitterbit/get-changed-files@v1
       - name: set_training
