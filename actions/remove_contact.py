@@ -12,7 +12,10 @@ class RemoveContact(Action):
         return "remove_contact"
 
     def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[str, Any]
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[str, Any],
     ) -> List[Dict[Text, Any]]:
         contacts = get_contacts(tracker.sender_id)
         handle = tracker.get_slot("remove_contact_handle")
